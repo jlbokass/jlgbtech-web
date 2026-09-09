@@ -1,35 +1,231 @@
-@import './base.css';
+:root {
+  --background: #0b0d12;
+  --surface: #151922;
+  --surface-light: #1c2230;
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
+  --text: #f5f7fa;
+  --text-muted: #9ca3af;
+
+  --accent: #6ea8fe;
+
+  --border: #293040;
+
+  --container: 1200px;
 }
 
-a,
-.green {
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+
+  min-width: 320px;
+  min-height: 100vh;
+
+  background: var(--background);
+  color: var(--text);
+
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+a {
+  color: inherit;
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+main {
+  overflow: hidden;
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
+.section,
+.hero,
+.contact-cta {
+  width: min(100% - 2rem, var(--container));
+  margin-inline: auto;
+}
+
+.section {
+  padding: 6rem 0;
+}
+
+.section__header {
+  max-width: 720px;
+  margin-bottom: 3rem;
+}
+
+.section__eyebrow,
+.hero__eyebrow {
+  margin-bottom: 1rem;
+
+  color: var(--accent);
+
+  font-size: 0.85rem;
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  max-width: 900px;
+
+  margin-bottom: 2rem;
+
+  font-size: clamp(3rem, 8vw, 6rem);
+  line-height: 0.95;
+
+  letter-spacing: -0.05em;
+}
+
+h2 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.05;
+
+  letter-spacing: -0.03em;
+}
+
+p {
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.hero {
+  min-height: 80vh;
+
+  padding: 8rem 0 5rem;
+
+  display: grid;
+  align-items: center;
+  gap: 4rem;
+}
+
+.hero__intro {
+  max-width: 650px;
+
+  font-size: 1.2rem;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  margin-top: 2rem;
+}
+
+.hero__stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.hero__stack span,
+.project-card__technologies span {
+  padding: 0.5rem 0.8rem;
+
+  border: 1px solid var(--border);
+  border-radius: 999px;
+
+  color: var(--text-muted);
+
+  font-size: 0.85rem;
+}
+
+.button {
+  display: inline-flex;
+
+  padding: 0.9rem 1.4rem;
+
+  border-radius: 0.5rem;
+
+  font-weight: 600;
+}
+
+.button--primary {
+  background: var(--text);
+  color: var(--background);
+}
+
+.button--secondary {
+  border: 1px solid var(--border);
+}
+
+.expertise-grid,
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.expertise-card,
+.project-card {
+  padding: 2rem;
+
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+}
+
+.expertise-card ul {
+  padding: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+  list-style: none;
+}
+
+.training {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+}
+
+.contact-cta {
+  margin-block: 6rem;
+
+  padding: 4rem;
+
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+}
+
+@media (max-width: 800px) {
+  .expertise-grid,
+  .projects-grid,
+  .training {
+    grid-template-columns: 1fr;
   }
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
+  .hero {
+    padding-top: 5rem;
+  }
+
+  .contact-cta {
+    padding: 2rem;
   }
 }
