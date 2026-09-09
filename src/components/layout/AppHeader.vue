@@ -64,6 +64,9 @@ watch(
 
       <button
         class="site-header__toggle"
+        :class="{
+          'site-header__toggle--open': isMenuOpen,
+        }"
         type="button"
         :aria-expanded="isMenuOpen"
         aria-controls="main-navigation"

@@ -233,14 +233,60 @@ main {
 }
 
 .site-header__toggle {
+  width: 28px;
+  height: 24px;
+
   display: none;
 
   padding: 0;
+
+  position: relative;
 
   border: 0;
   background: transparent;
 
   cursor: pointer;
+}
+
+.site-header__toggle span {
+  position: absolute;
+  left: 2px;
+
+  width: 24px;
+  height: 2px;
+
+  background: var(--color-text);
+
+  transition:
+    transform var(--transition),
+    opacity var(--transition),
+    top var(--transition);
+}
+
+.site-header__toggle span:nth-child(1) {
+  top: 4px;
+}
+
+.site-header__toggle span:nth-child(2) {
+  top: 11px;
+}
+
+.site-header__toggle span:nth-child(3) {
+  top: 18px;
+}
+
+.site-header__toggle--open span:nth-child(1) {
+  top: 11px;
+  transform: rotate(45deg);
+}
+
+.site-header__toggle--open span:nth-child(2) {
+  opacity: 0;
+}
+
+.site-header__toggle--open span:nth-child(3) {
+  top: 11px;
+  transform: rotate(-45deg);
 }
 
 .site-header__toggle span {
@@ -530,10 +576,13 @@ main {
 @media (max-width: 500px) {
   h1 {
     font-size: clamp(
-      2.8rem,
-      15vw,
-      4rem
+      2.35rem,
+      12vw,
+      3.25rem
     );
+
+    line-height: 0.98;
+    letter-spacing: -0.04em;
   }
 
   .hero__actions {
@@ -546,5 +595,11 @@ main {
 
   .section {
     padding-block: 4rem;
+  }
+}
+
+@media (max-width: 360px) {
+  h1 {
+    font-size: 2.25rem;
   }
 }
