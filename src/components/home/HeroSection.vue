@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { RouterLink } from 'vue-router'
+import BaseButton from '@/components/ui/BaseButton.vue'
 </script>
 
 <template>
@@ -15,15 +15,16 @@ import { RouterLink } from 'vue-router'
       </p>
 
       <div class="hero__actions">
-        <RouterLink class="button button--primary" to="/projects"> View my projects </RouterLink>
+        <BaseButton to="/projects"> View my projects </BaseButton>
 
-        <RouterLink class="button button--secondary" to="/contact"> Contact me </RouterLink>
+        <BaseButton to="/contact" variant="secondary"> Contact me </BaseButton>
       </div>
     </div>
 
     <div class="hero__stack">
       <span>PHP</span>
       <span>Symfony</span>
+      <span>WP / WooCommerce</span>
       <span>Vue</span>
       <span>TypeScript</span>
       <span>Docker</span>
