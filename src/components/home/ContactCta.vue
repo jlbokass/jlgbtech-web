@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { RouterLink } from 'vue-router'
+import BaseButton from '@/components/ui/BaseButton.vue'
 </script>
 
 <template>
@@ -8,6 +8,6 @@ import { RouterLink } from 'vue-router'
 
     <h2>Need a developer, technical trainer or consultant?</h2>
 
-    <RouterLink class="button button--primary" to="/contact"> Contact me </RouterLink>
+    <BaseButton to="/contact"> Contact me </BaseButton>
   </section>
 </template>

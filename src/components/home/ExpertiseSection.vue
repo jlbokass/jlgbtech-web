@@ -9,7 +9,7 @@ const expertises: Expertise[] = [
   {
     title: 'Software Development',
     description: 'Design and development of maintainable web applications and APIs.',
-    technologies: ['PHP', 'Symfony', 'MySQL', 'REST API'],
+    technologies: ['PHP', 'Symfony', 'MySQL', 'REST API', 'WP'],
   },
   {
     title: 'DevOps & Cloud',
